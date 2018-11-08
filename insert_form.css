@@ -1,0 +1,83 @@
+.header {
+  background-color: skyblue;
+  height: 100px;
+  margin: 20px;
+}
+.logo {
+  text-align: center;
+  vertical-align: middle;
+  font-size: 3.25vw;
+  line-height: 100px;
+  color: yellow;
+  font-family: 'arial black';
+}
+.form_box{
+  background-color: lightgrey;
+  margin:20px;
+  height: 450px;
+  padding-top:50px;
+  padding-bottom: 50px;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+label{
+  vertical-align: middle;
+  font-size: 35px;
+  font-family:'arial black';
+  color: black;
+  margin-bottom: 90px;
+  width: 100px;
+  display: table-cell;
+}
+input[type="text"],
+textarea {
+  text-align: left;
+  padding: 0.8em;
+  margin-bottom: 40px;
+  outline: none;
+  border: 1px solid #DDD;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  font-size: 16px;
+  width: 900px;
+  max-width: 100%;
+}
+textarea {
+  width: 900px;
+  height: 170px;
+  text-align: left;
+  padding: 0.8em;
+  outline: none;
+  border: 1px solid #DDD;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  font-size: 16px;
+  max-width: 100%;
+}
+input#submit_button{
+  padding: 15px 40px;
+  font-size: 1.2em;
+  background-color: blue;
+  color: #fff;
+  border-style: none;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+}
+.btn{
+  text-align: right;
+}
+.footer{
+  background-color: skyblue;
+  height: 50px;
+  margin: 20px;
+}
+.right{
+  color: grey;
+  font-size: 0.4vw;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 50px;
+
+}

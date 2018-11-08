@@ -1,14 +1,14 @@
 
 .header {
   background-color: skyblue;
-  height: 90px;
+  height: 100px;
   margin: 20px;
 }
 .logo {
   text-align: center;
   vertical-align: middle;
-  font-size: 45px;
-  line-height: 90px;
+  font-size: 3.25vw;
+  line-height: 100px;
   color: yellow;
   font-family: 'arial black';
 }
@@ -22,9 +22,11 @@ width: 350px;
 }
 .user-box{
   border-bottom: solid 2px lightgrey;
+  max-width: 100%;
 }
 .month-box{
   border-bottom: solid 2px lightgrey;
+  max-width: 100%;
 }
 .guest{
   margin: 0px;
@@ -37,13 +39,16 @@ width: 350px;
   padding: 20px;
   border: solid 2px lightgrey;
   width: 1200px;
+  max-width: 100%;
 }
 .title{
   font-size: 24px;
+  max-width: 100%;
 }
 .created{
   font-size: 12px;
   color: lightgrey;
+  max-width: 100%;
 }
 .footer{
   background-color: skyblue;
@@ -52,7 +57,7 @@ width: 350px;
 }
 .right{
   color: grey;
-  font-size: 12px;
+  font-size: 0.4vw;
   text-align: center;
   vertical-align: middle;
   line-height: 50px;

@@ -1,6 +1,6 @@
 <?php
 require_once('dbconnect.php');
-require_once('insert.sql');
+require_once('insert.php');
 date_default_timezone_set('Asia/Manila');
 $time = intval(date('H:i:s'));
 
@@ -24,6 +24,26 @@ $month_box3 = date('Y-m', strtotime('-3 month'));
 $month_box3 = date('Y年m月', strtotime($month_box3));
 
 
+// 保存した日記の取得
+$sql = 'SELECT * FROM diary';
+$stmt = $dbh->prepare($sql);
+$stmt->execute();
+
+$diaries = array();
+
+while(true){
+
+    $record = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if($record == false){
+        break;
+    }
+    $diaries[] = $record;
+}
+
+echo '<pre>';
+var_dump($diaries);
+echo '</pre>';
 
 ?>
 
@@ -44,6 +64,9 @@ $month_box3 = date('Y年m月', strtotime($month_box3));
   <div class="side-box">
     <div class="user-box">
       <p class="guest"><?php echo $word?>、ゲストさん</p>
+    </div>
+    <div class="user-box">
+        <a href="insert_form.php">日記を更新する</a>
     </div>
     <div class="month-box">
       <a href="#"><?php echo $month_box1 ?>の日記</a>
