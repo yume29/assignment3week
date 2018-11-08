@@ -41,9 +41,16 @@ while(true){
     $diaries[] = $record;
 }
 
-echo '<pre>';
-var_dump($diaries);
-echo '</pre>';
+if(isset($_GET['delete'])){
+  $post_id = $_GET['id'];
+
+  $sql = 'DELETE FROM diary WHERE id = ?';
+  $data = [$post_id];
+  $stmt = $dbh->prepare($sql);
+  $stmt->execute($data);
+  header('Location: index.php');
+  exit();
+}
 
 ?>
 
@@ -80,26 +87,16 @@ echo '</pre>';
   </div>
 
   <div class="diary-box">
-    <div class="contents">
-      <a href="#" class="title">こんにちは</a>
-      <p class="created">2018/10/31</p>
-    </div>
-    <div class="contents">
-      <a href="#" class="title">こんにちは</a>
-      <p class="created">2018/10/31</p>
-    </div>
-    <div class="contents">
-      <a href="#" class="title">こんにちは</a>
-      <p class="created">2018/10/31</p>
-    </div>
-    <div class="contents">
-      <a href="#" class="title">こんにちは</a>
-      <p class="created">2018/10/31</p>
-    </div>
-    <div class="contents">
-      <a href="#" class="title">こんにちは</a>
-      <p class="created">2018/10/31</p>
-    </div>
+    <?php foreach ($diaries as $diary) :?>
+      <div class="contents">
+        <a href="#" class="title"><?php echo $diary['title']?></a>
+        <p class="created"><?php echo $diary['created']?></p>
+        <form action="index.php" method="GET">
+        <div class="btn"><input id="dlt_btn" type="submit" name="delete" value="削除"></div>
+        <input type="hidden" name='id' value="<?php echo $diary['id']?>">
+        </form>
+      </div>
+    <?php endforeach ;?>
   </div>
     <div class="footer">
       <div class="row">
