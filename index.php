@@ -1,5 +1,6 @@
 <?php
 require_once('dbconnect.php');
+require_once('insert.sql');
 date_default_timezone_set('Asia/Manila');
 $time = intval(date('H:i:s'));
 
@@ -22,9 +23,6 @@ $month_box2 = date('Y年m月', strtotime($month_box2));
 $month_box3 = date('Y-m', strtotime('-3 month'));
 $month_box3 = date('Y年m月', strtotime($month_box3));
 
-$sql = 'INSERT INTO diary (title, contents, created) VALUES (hogehoge, hogehoge, NOW()), (hugahuga,hugahuga, NOW()),(mogemoge, mogemoge, NOW()), (higehige, higehige, NOW()), (munimuni, munimuni, NOW())';
-$stmt = $dbh->prepare($sql);
-$stmt->execute();
 
 
 ?>
