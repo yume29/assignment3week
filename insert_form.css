@@ -17,8 +17,11 @@
   height: 450px;
   padding-top:50px;
   padding-bottom: 50px;
-  padding-left: 100px;
-  padding-right: 100px;
+  padding-left: 34em;
+  padding-right: 39em;
+}
+form#form{
+padding-left: 150px;
 }
 label{
   vertical-align: middle;

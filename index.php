@@ -60,6 +60,17 @@ if(isset($_GET['delete'])){
   <meta charset="UTF-8">
   <title>Nexseed Diary</title>
   <link rel="stylesheet" href="diary.css">
+  <script type="text/javascript"> 
+    function check(){
+      if(window.confirm('削除してよろしいですか？')){ // 確認ダイアログを表示
+        return true; // 「OK」時は送信を実行
+      }
+      else{ // 「キャンセル」時の処理
+        window.alert('キャンセルされました'); // 警告ダイアログを表示
+        return false; // 送信を中止
+      }
+    }
+</script>
 </head>
 <body>
   <div class="header">
@@ -92,8 +103,8 @@ if(isset($_GET['delete'])){
         <a href="#" class="title"><?php echo $diary['title']?></a>
         <p class="created"><?php echo $diary['created']?></p>
         <form action="index.php" method="GET">
-        <div class="btn"><input id="dlt_btn" type="submit" name="delete" value="削除"></div>
-        <input type="hidden" name='id' value="<?php echo $diary['id']?>">
+        <div class="btn"><input id="dlt_btn" type="submit" name="delete" value="削除" onClick="return check()"></div>
+        <input class="post_id" type="hidden" name='id' value="<?php echo $diary['id']?>">
         </form>
       </div>
     <?php endforeach ;?>
@@ -103,6 +114,5 @@ if(isset($_GET['delete'])){
         <p class="right"> Copy Right ©︎ NexSeed inc All Rights Preserved</p>
       </div>
   </div>
-
 </body>
 </html>
