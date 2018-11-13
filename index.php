@@ -59,7 +59,7 @@ if(isset($_GET['delete'])){
 <head>
   <meta charset="UTF-8">
   <title>Nexseed Diary</title>
-  <link rel="stylesheet" href="diary.css">
+  <link rel="stylesheet" href="css/diary.css">
   <script type="text/javascript"> 
     function check(){
       if(window.confirm('削除してよろしいですか？')){ // 確認ダイアログを表示
@@ -77,6 +77,15 @@ if(isset($_GET['delete'])){
     <div class="row">
       <p class="logo">NexSeed Diary</p>
     </div>
+  </div>
+  <div>
+    <ul class="nav">
+      <li><a href="register/signup.php">新規読者登録</a></li>
+      <li><a href="signin.php">ログイン</a></li>
+      <li><a href="">マイページ</a></li>
+      <li><a href="">いいねした記事</a></li>
+      <li><a href="index.php">トップページへ</a></li>
+    </ul>
   </div>
 
   <div class="side-box">

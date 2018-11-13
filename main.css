@@ -1,0 +1,148 @@
+.header {
+  background-color: skyblue;
+  margin: 20px;
+}
+.logo {
+  text-align: center;
+  margin:0px;
+  vertical-align: middle;
+  font-size: 3.25vw;
+  line-height: 100px;
+  color: yellow;
+  font-family: 'arial black';
+}
+ul{
+  list-style: none;
+  padding-left: 0;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+ul li{
+  text-align: center;
+  background: #808080;
+  -webkit-transition: 0.25s ease-in-out;
+    -moz-transition: 0.25s ease-in-out;
+    transition: 0.25s ease-in-out;
+}
+ul li a{
+  /*width: 100%;*/
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  line-height: 50px;
+}
+ul li:hover{
+  background: #b2b2b2;
+}
+ul.nav li{
+  width: 20%;
+  float: right;
+}
+ul.nav li a{
+  line-height: 50px;
+}
+ul.nav:after{
+  content: "";
+  display: block;
+  clear: both;
+}
+.form_box{
+  background-color: lightgrey;
+  margin:20px;
+  padding-top:50px;
+  padding-bottom: 50px;
+  padding-left: 34em;
+  padding-right: 39em;
+}
+form#form{
+padding-left: 150px;
+}
+label{
+  vertical-align: middle;
+  font-size: 35px;
+  font-family:'arial black';
+  color: black;
+  margin-bottom: 90px;
+  /*width: 100px;*/
+  display: table-cell;
+}
+input[type="text"],[type="email"],[type="password"],
+textarea {
+  text-align: left;
+  padding: 0.8em;
+  margin-bottom: 40px;
+  outline: none;
+  border: 1px solid #DDD;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  font-size: 16px;
+  width: 900px;
+  max-width: 100%;
+}
+textarea {
+  width: 900px;
+  height: 170px;
+  text-align: left;
+  padding: 0.8em;
+  outline: none;
+  border: 1px solid #DDD;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  font-size: 16px;
+  max-width: 100%;
+}
+input#submit_button{
+  padding: 15px 40px;
+  font-size: 1.2em;
+  background-color: blue;
+  color: #fff;
+  border-style: none;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  float: right;
+}
+.btn{
+  text-align: right;
+}
+/*button.back{
+  padding: 15px 40px;
+  font-size: 1.2em;
+  background-color: blue;
+  color: #fff;
+  border-style: none;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  float: left;
+}
+
+.back-btn{
+  text-align: left;
+}*/
+.footer{
+  background-color: skyblue;
+  height: 50px;
+  margin: 20px;
+}
+.right{
+  color: grey;
+  font-size: 0.4vw;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 50px;
+}
+.title{
+  text-align: center;
+  vertical-align: middle;
+  font-size: 2.00vw;
+  line-height: 100px;
+  color: blue;
+  font-family: 'arial black';
+}
+.caution{
+  color: red; 
+}
+.cmt{
+  text-align: center;
+}
