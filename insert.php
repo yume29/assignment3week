@@ -8,9 +8,10 @@ if(!empty($_POST)){
 
 $title = $_POST['title'];
 $contents = $_POST['contents'];
+$user_id = $_POST['user_id'];
 
-$sql = 'INSERT INTO diary (title, contents, created) VALUES (?, ?, NOW())';
-$data = [$title, $contents];
+$sql = 'INSERT INTO diary (title, contents, user_id, created) VALUES (?, ?, ?, NOW())';
+$data = [$title, $contents, $user_id];
 $stmt = $dbh->prepare($sql);
 $stmt->execute($data);
 

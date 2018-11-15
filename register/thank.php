@@ -17,8 +17,8 @@
 
   <div class="form_box">
     <div class="title">登録完了</div>
-    <p class="cmt">読者ありがとうございます</p>
-    <p class="cmt">お気に入り機能やマイページ利用ができるようになりました。</p>
+    <p class="cmt">登録ありがとうございます</p>
+    <p class="cmt">ブログの書き込み、マイページ利用などができるようになりました。</p>
     <p class="cmt"><a class="cmt" href="../index.php">トップページへ戻る</a></p>
   </div>
 

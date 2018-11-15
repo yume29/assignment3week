@@ -40,7 +40,7 @@ if(!empty($_POST)){
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>投稿フォーム</title>
+  <title>会員登録</title>
   <link rel="stylesheet" href="../css/main.css">
 </head>
 <body>
@@ -54,13 +54,13 @@ if(!empty($_POST)){
       <li><a href="signup.php">新規読者登録</a></li>
       <li><a href="../signin.php">ログイン</a></li>
       <li><a href="">マイページ</a></li>
-      <li><a href="">いいねした記事</a></li>
+      <li><a href="../insert_form.php">日記を書く</a></li>
       <li><a href="../index.php">トップページへ</a></li>
     </ul>
   </div>
 
   <div class="form_box">
-    <div class="title">読者登録フォーム</div>
+    <div class="title">登録フォーム</div>
     <form action="signup.php" method="POST">
 
       <label>NAME</label>

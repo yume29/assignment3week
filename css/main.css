@@ -1,6 +1,8 @@
-.header {
+body{
+  margin:0px;
+  }
+  .header {
   background-color: skyblue;
-  margin: 20px;
 }
 .logo {
   text-align: center;
@@ -14,8 +16,8 @@
 ul{
   list-style: none;
   padding-left: 0;
-  margin-left: 20px;
-  margin-right: 20px;
+  /*margin-left: 20px;*/
+  /*margin-right: 20px;*/
 }
 ul li{
   text-align: center;
@@ -48,7 +50,15 @@ ul.nav:after{
 }
 .form_box{
   background-color: lightgrey;
-  margin:20px;
+  margin:0px;
+  padding-top:70px;
+  padding-bottom: 70px;
+  padding-left: 34em;
+  padding-right: 39em;
+}
+.post_box{
+  background-color: white;
+  margin:0px;
   padding-top:70px;
   padding-bottom: 70px;
   padding-left: 34em;
@@ -119,17 +129,13 @@ button.back{
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   float: left;
-  /*display: table-cell;*/
 }
-/*.back-btn{
-  text-align: left;
-}*/
 .footer{
   background-color: skyblue;
   height: 50px;
-  margin: 20px;
 }
 .right{
+  margin-top: 0px;
   color: grey;
   font-size: 0.4vw;
   text-align: center;
@@ -149,4 +155,15 @@ button.back{
 }
 p.cmt, {
   text-align: center;
+}
+p.post_font{
+  font-size: 29px;
+}
+h2.post_title{
+  font-size: 38px;
+  text-align:center;
+}
+p.created{
+  text-align: center;
+  font-size: 24px;
 }

@@ -19,8 +19,8 @@ if(!empty($_POST)){
 
         $sql = 'SELECT * FROM users WHERE email = ?';
         $data = [$email];
-        $stmt = $dbh->prepare($spl);
-        $stmt = execute($data);
+        $stmt = $dbh->prepare($sql);
+        $stmt->execute($data);
         // オブジェクト型から、配列型へ
         $record = $stmt->fetch(PDO::FETCH_ASSOC);
         // 登録されたemailならtrueが返ってくる
@@ -31,7 +31,8 @@ if(!empty($_POST)){
     // パスワードの一致チェック
         if(password_verify($password, $record['password'])){
 
-            header('Location: index.php');
+          $_SESSION['register']['id'] = $record['id'];
+          header('Location: index.php');
         }else{
       // 認証失敗
             $errors['signin'] = 'failed';
@@ -40,6 +41,10 @@ if(!empty($_POST)){
         $errors['signin'] = 'blank';
     }
 }
+
+echo '<pre>';
+var_dump($password);
+echo '</pre>';
 ?>
 <!DOCTYPE html>
 <html lang="en">

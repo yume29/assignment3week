@@ -1,7 +1,8 @@
-
+body{
+  margin:0px;
+}
 .header {
   background-color: skyblue;
-  margin: 20px;
 }
 .logo {
   margin:0px;
@@ -15,8 +16,8 @@
 ul{
   list-style: none;
   padding-left: 0;
-  margin-left: 20px;
-  margin-right: 20px;
+  /*margin-left: 20px;*/
+  /*margin-right: 20px;*/
 }
 ul li{
   text-align: center;
@@ -88,7 +89,7 @@ width: 380px;
 .footer{
   background-color: skyblue;
   height: 50px;
-  margin: 20px;
+  /*margin: 20px;*/
 }
 .right{
   color: grey;
