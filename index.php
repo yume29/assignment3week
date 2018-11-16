@@ -27,7 +27,6 @@ $month_box3 = date('Y-m', strtotime('-3 month'));
 $month_box3 = date('Y年m月', strtotime($month_box3));
 
 // ログインしているユーザーの情報
-
 if(!empty($_SESSION['register']['id'])){
 
   $user_id = $_SESSION['register']['id'];
@@ -75,7 +74,7 @@ if(isset($_GET['delete'])){
 }
 
 echo '<pre>';
-var_dump($user);
+var_dump($target_day);
 echo '</pre>';
 
 // echo '<pre>';
@@ -122,15 +121,15 @@ echo '</pre>';
   <div class="side-box">
     <div class="user-box">
       <p class="guest"><?php echo $word?>、
-      <?php if(!empty($_SESSION['register']['id'])):?>
+      <?php if(!empty($_SESSION['register']['id']) && isset($user['name'])):?>
         <?php echo $user['name']?>さん</p>
       <?php else :?>
-        ゲストさん</p>
+        <?php echo 'ゲストさん'?></p>
       <?php endif;?>
     </div>
 
     <div class="month-box">
-      <a href="#"><?php echo $month_box1 ?>の日記</a>
+      <a href="index.php?month=<?php echo $month_box1?>"><?php echo $month_box1 ?>の日記</a>
     </div>
     <div class="month-box">
       <a href="#"><?php echo $month_box2 ?>の日記</a>

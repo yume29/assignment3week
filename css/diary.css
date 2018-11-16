@@ -75,11 +75,13 @@ width: 380px;
   padding: 20px;
   border: solid 2px lightgrey;
   width: 1100px;
+  height: 150px;
   max-width: 100%;
 }
 .title{
   font-size: 24px;
   max-width: 100%;
+  width: 500px;
 }
 .created{
   font-size: 12px;

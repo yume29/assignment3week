@@ -42,9 +42,9 @@ if(!empty($_POST)){
     }
 }
 
-echo '<pre>';
-var_dump($password);
-echo '</pre>';
+// echo '<pre>';
+// var_dump($password);
+// echo '</pre>';
 ?>
 <!DOCTYPE html>
 <html lang="en">
