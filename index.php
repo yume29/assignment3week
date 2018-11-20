@@ -17,14 +17,14 @@ if ('6:00:00' <= $time && $time <= '11:00:59') {
 
 // 過去三ヶ月の記事欄
 $target_day = date('Y-m-d');
-$month_box1 = date('Y-m', strtotime($target_day));
-$month_box1 = date('Y年m月', strtotime($month_box1));
+$month1 = date('Y-m', strtotime($target_day));
+$month_box1 = date('Y年m月', strtotime($month1));
 
-$month_box2 = date('Y-m', strtotime('-2 month'));
-$month_box2 = date('Y年m月', strtotime($month_box2));
+$month2 = date('Y-m', strtotime('-1 month'));
+$month_box2 = date('Y年m月', strtotime($month2));
 
-$month_box3 = date('Y-m', strtotime('-3 month'));
-$month_box3 = date('Y年m月', strtotime($month_box3));
+$month3 = date('Y-m', strtotime('-2 month'));
+$month_box3 = date('Y年m月', strtotime($month3));
 
 // ログインしているユーザーの情報
 if(!empty($_SESSION['register']['id'])){
@@ -43,22 +43,56 @@ if(!empty($_SESSION['register']['id'])){
   $_SESSION['register']['id'] = 'signout';
 }
 
-// 保存した日記の全件取得
-$sql = 'SELECT * FROM diary';
-$stmt = $dbh->prepare($sql);
-$stmt->execute();
+// 月別記事の出力
 
-$diaries = array();
+if(!empty($_GET['month'])){
 
-while(true){
-
-    $record = $stmt->fetch(PDO::FETCH_ASSOC);
-
-    if($record == false){
-        break;
-    }
-    $diaries[] = $record;
+    if($_GET['month'] == $month1){
+        $sql = 'SELECT * FROM diary WHERE created LIKE "%"?"%"';
+        $data = [$month1];
+    }elseif($_GET['month'] == $month2){
+        $sql = 'SELECT * FROM diary WHERE created LIKE "%"?"%"';
+        $data = [$month2];
+    }elseif($_GET['month'] == $month3){
+        $sql = 'SELECT * FROM diary WHERE created LIKE "%"?"%"';
+        $data = [$month3];
+    }else{
 }
+    $stmt = $dbh->prepare($sql);
+    $stmt->execute($data);
+    $diaries = array();
+
+    while(true){
+
+        $record = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if($record == false){
+            break;
+        }
+        $diaries[] = $record;
+    }
+
+
+}else{
+
+    // 保存した日記の全件取得
+    $sql = 'SELECT * FROM diary';
+    $stmt = $dbh->prepare($sql);
+    $stmt->execute();
+
+    $diaries = array();
+
+    while(true){
+
+        $record = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if($record == false){
+            break;
+        }
+        $diaries[] = $record;
+    }
+}
+
 
 // 記事の削除
 if(isset($_GET['delete'])){
@@ -73,9 +107,9 @@ if(isset($_GET['delete'])){
 
 }
 
-echo '<pre>';
-var_dump($target_day);
-echo '</pre>';
+// echo '<pre>';
+// var_dump($target_day);
+// echo '</pre>';
 
 // echo '<pre>';
 // var_dump($diaries);
@@ -129,13 +163,13 @@ echo '</pre>';
     </div>
 
     <div class="month-box">
-      <a href="index.php?month=<?php echo $month_box1?>"><?php echo $month_box1 ?>の日記</a>
+      <a href="index.php?month=<?php echo $month1?>"><?php echo $month_box1 ?>の日記</a>
     </div>
     <div class="month-box">
-      <a href="#"><?php echo $month_box2 ?>の日記</a>
+      <a href="?month=<?php echo $month2?>"><?php echo $month_box2 ?>の日記</a>
     </div>
     <div class="month-box">
-      <a href="#"><?php echo $month_box3 ?>の日記</a>
+      <a href="?month=<?php echo $month3?>"><?php echo $month_box3 ?>の日記</a>
     </div>
   </div>
 

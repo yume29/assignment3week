@@ -167,3 +167,35 @@ p.created{
   text-align: center;
   font-size: 24px;
 }
+p.writer{
+  text-align: center;
+  font-size: 30px;
+}
+input#signout{
+  text-align: center;
+}
+h2.user_info{
+  text-align: center;
+  margin: auto;
+}
+.user_info{
+  width: 600px;
+}
+p.name{
+  text-align: left;
+  font-size: 24px;
+}
+p.email{
+  text-align: left;
+  font-size: 24px;
+}
+.fav_btn{
+  text-align: right;
+  height: 50px;
+}
+.favorite{
+  border-color: white;
+}
+span.fav_count{
+  font-size:20px;
+}

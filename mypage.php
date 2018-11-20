@@ -4,13 +4,30 @@ require_once('dbconnect.php');
 
 if(isset($_GET['signout'])){
 
-$_SESSION = [];
-// サーバー内の$_SESSIONをクリア
-session_destroy();
-// サインアウトしたあとの遷移
-header('location: index.php');
-exit();
+    $_SESSION = [];
+    // サーバー内の$_SESSIONをクリア
+    session_destroy();
+    // サインアウトしたあとの遷移
+    header('location: index.php');
+    exit();
 }
+
+if(!empty($_SESSION['register']['id'])){
+
+  $user_id = $_SESSION['register']['id'];
+  $sql = 'SELECT * FROM users WHERE id = ?';
+  $data  = [$user_id];
+  $stmt = $dbh->prepare($sql);
+  $stmt->execute($data);
+
+  $user = '';
+  $record = $stmt->fetch(PDO::FETCH_ASSOC);
+  $user = $record;
+
+}else{
+  $_SESSION['register']['id'] = 'signout';
+}
+
 
 ?>
 <!DOCTYPE html>
@@ -28,7 +45,7 @@ exit();
   </div>
   <div>
     <ul class="nav">
-      <li><a href="signup.php">新規読者登録</a></li>
+      <li><a href="register/signup.php">新規読者登録</a></li>
       <li><a href="signin.php">ログイン</a></li>
       <li><a href="mypage.php">マイページ</a></li>
       <li><a href="insert_form.php">日記を書く</a></li>
@@ -38,8 +55,15 @@ exit();
 
   <div class="form_box">
 
+  <h2 class="user_info">User Info</h2>
+
+    <div class="user_info">
+    <p class="name">ユーザーネーム：<?php echo $user['name']?></p>
+    <p class="email">メールアドレス：<?php echo $user['email']?></p>
+    </div>
+
     <form action="mypage.php" method="GET">
-      <input type="submit" name="signout" value="サインアウト">
+      <input type="submit" id="signout" name="signout" value="サインアウト">
     </form>
   </div>
 

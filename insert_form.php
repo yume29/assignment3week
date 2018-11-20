@@ -2,6 +2,13 @@
 require_once('dbconnect.php');
 session_start();
 
+
+
+if ( empty( $_SESSION ) || $_SESSION[ 'register' ][ 'id' ] == 'signout') {
+  header( 'Location: register/signup.php' );
+  exit();
+}
+
 if(isset($_SESSION['register']['id'])){
 
   $user_id = $_SESSION['register']['id'];
@@ -14,14 +21,16 @@ if(isset($_SESSION['register']['id'])){
   $user = '';
   $record = $stmt->fetch(PDO::FETCH_ASSOC);
   $user = $record;
+
 }
+
 
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>会員登録</title>
+  <title>投稿</title>
   <link rel="stylesheet" href="css/main.css">
 </head>
 <body>

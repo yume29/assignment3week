@@ -2,9 +2,7 @@
 session_start();
 require_once('../dbconnect.php');
 
-  echo '<pre>';
-  var_dump($_SESSION);
-  echo '</pre>';
+
 
 $name = $_SESSION['register']['name'];
 $email = $_SESSION['register']['email'];
